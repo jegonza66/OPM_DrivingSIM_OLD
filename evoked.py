@@ -9,6 +9,7 @@ import paths
 import plot_general
 import functions_general
 import functions_analysis
+import save
 
 save_path = paths.save_path
 plot_path = paths.plots_path
@@ -28,11 +29,11 @@ else:
 #----- Parameters -----#
 task = 'DA'
 # Trial selection
-trial_params = {'epoch_id': 'fixation',  # use'+' to mix conditions (red+blue)
+trial_params = {'epoch_id': 'pur',  # use'+' to mix conditions (red+blue)
                 'reject': False,  # None to use default {'mag': 5e-12} / False for no rejection / 'subject' to use subjects predetermined rejection value
                 'evt_from_df': True # If True, use events from df, otherwise use events from annotations
                 }
-meg_params = {'chs_id': 'mag',
+meg_params = {'chs_id': 'mag_y',
               'band_id': None,
               'filter_sensors': True,
               'filter_method': 'iir',
@@ -140,3 +141,12 @@ grand_avg = grand_avg.copy().pick(picks)
 fname = f'Grand_average'
 plot_general.evoked(evoked_meg=grand_avg, plot_xlim=plot_xlim, display_figs=display_figs,
                     save_fig=save_fig, fig_path=evoked_fig_path, fname=fname)
+
+# Plot joint
+fig = grand_avg.plot_joint(title='Grand Average Joint Plot', ts_args=dict(time_unit='s'),
+                     topomap_args=dict(time_unit='s'))
+save.fig(fig, evoked_fig_path, fname + '_joint_plot')
+
+# Plot topo
+fig = grand_avg.plot_topomap(times=[0.1])
+save.fig(fig, evoked_fig_path, fname + '_topo_plot')
