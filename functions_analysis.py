@@ -562,7 +562,7 @@ def run_source_permutations_test(src, stc, source_data, subject, exp_info, save_
 
     # Define the t-value threshold for cluster formation
     if desired_tval == 'TFCE':
-        t_thresh = dict(start=0, step=0.1)
+        t_thresh = dict(start=0, step=0.2)
     else:
         df = len(exp_info.subjects_ids) - 1  # degrees of freedom for the test
         t_thresh = stats.distributions.t.ppf(1 - desired_tval / 2, df=df)
