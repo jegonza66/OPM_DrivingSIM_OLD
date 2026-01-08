@@ -1129,7 +1129,7 @@ def connectivity_strength(subject, subject_code, con, src, labels, surf_vol, sub
 
 
 def sources(stc, src, subject, subjects_dir, initial_time, surf_vol, force_fsaverage, source_estimation, save_fig=False, fig_path=None, fname=None, surface='pial', hemi='split', views='lateral',
-            alpha=0.75, mask_negatives=False, time_label='auto', save_vid=False, positive_cbar=None, clim=None):
+            alpha=1, mask_negatives=False, time_label='auto', save_vid=False, positive_cbar=None, clim=None):
 
     # Close all plot figures
     try:
