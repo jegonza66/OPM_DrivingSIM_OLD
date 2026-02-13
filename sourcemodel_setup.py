@@ -89,7 +89,7 @@ for subject_id in exp_info.subjects_ids + ['fsaverage']:
         bem = mne.read_bem_solution(fname_bem)
     except:
         # Compute
-        model = mne.make_bem_model(subject=subject_code, ico=ico, conductivity=[0.3], subjects_dir=subjects_dir)
+        model = mne.make_bem_model(subject=subject_code, ico=int(spacing[-1]), conductivity=[0.3], subjects_dir=subjects_dir)
         bem = mne.make_bem_solution(model)
         # Save
         mne.write_bem_solution(fname_bem, bem, overwrite=True)
