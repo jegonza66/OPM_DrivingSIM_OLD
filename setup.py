@@ -81,8 +81,8 @@ class exp_info:
         # Taken from Driving Experiment info v0_1
         self.exp_times = {'11074': {'cf_start': 59, 'cf_end': 172, 'da_start': 172, 'da_end': 535},
                           '11766': {'cf_start': 49, 'cf_end': 161, 'da_start': 161, 'da_end': 526},
-                          '13229': {'cf_start': 55, 'cf_end': 168, 'da_start': 161, 'da_end': 546},
-                          '13703': {'cf_start': 54, 'cf_end': 168, 'da_start': 161, 'da_end': 532},
+                          '13229': {'cf_start': 55, 'cf_end': 168, 'da_start': 168, 'da_end': 546},
+                          '13703': {'cf_start': 54, 'cf_end': 168, 'da_start': 168, 'da_end': 532},
                           '14446': {'cf_start': 50, 'cf_end': 164, 'da_start': 164, 'da_end': 528},
                           '15463': {'cf_start': 57, 'cf_end': 171, 'da_start': 171, 'da_end': 536},
                           '15519': {'cf_start': 59, 'cf_end': 172, 'da_start': 172, 'da_end': 546},
